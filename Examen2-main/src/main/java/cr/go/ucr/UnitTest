@@ -1,0 +1,26 @@
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class OperacionAritmeticaTest {
+
+    @Test
+    public void testOperacionesAritmeticas() {
+        // Casos de prueba para la clase OperacionAritmetica
+
+        // Caso de suma
+        OperacionAritmetica sumar = new OperacionAritmetica(new Sumar());
+        assertEquals(15, sumar.procesar(5, 10));
+
+        // Caso de resta
+        OperacionAritmetica resta = new OperacionAritmetica(new Resta());
+        assertEquals(-2, resta.procesar(20, 21));
+
+        // Caso de multiplicación
+        OperacionAritmetica multiplicacion = new OperacionAritmetica(new Multiplicacion());
+        assertEquals(20, multiplicacion.procesar(5, 4));
+
+        // Caso de división
+        OperacionAritmetica division = new OperacionAritmetica(new Division());
+        assertEquals(-3, division.procesar(5, 0));
+    }
+}
